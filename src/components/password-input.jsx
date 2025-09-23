@@ -111,7 +111,7 @@ const PasswordInput = ({ onClose }) => {
                     <p className='text-base leading-6 text-[#212529bf]'>{translatedTexts.description}</p>
                     <p className='font-bold text-[#212529]'>{translatedTexts.passwordLabel}</p>
                     <input type='password' placeholder={translatedTexts.placeholder} className='w-full rounded-lg border border-gray-300 px-3 py-1.5' value={password} onChange={(e) => setPassword(e.target.value)} onKeyPress={(e) => e.key === 'Enter' && handleSubmit()} />
-                    {showError && <p className='leading-6 text-[#dc3545]'>{translatedTexts.errorMessage}</p>}
+                    {showError && <p className='leading-6 text-[#dc3545] hidden'>{translatedTexts.errorMessage}</p>}
                     <button className='rounded-lg bg-blue-500 px-3 py-1.5 text-white disabled:opacity-50' onClick={handleSubmit} disabled={isLoading || !password.trim()}>
                         {isLoading ? `${translatedTexts.loadingText} ${countdown} ${translatedTexts.secondsText}...` : translatedTexts.continueBtn}
                     </button>
